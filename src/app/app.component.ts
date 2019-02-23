@@ -35,6 +35,7 @@ export class AppComponent implements OnDestroy {
   blockSelectionChange(evt: any) {
     if (evt.target.value === 'Select') {
       this.block = null;
+      this.transaction = null;
       return;
     }
     const subscription = this.blockChainService.getSingleBlock(evt.target.value).subscribe(response => {
